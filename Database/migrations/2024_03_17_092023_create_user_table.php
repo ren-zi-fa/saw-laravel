@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id('id_user');
-            $table->integer('id_user_level');
+            $table->foreignId('id_user_level')->references("id_user_level")->on('user_level')->onDelete('cascade');
             $table->string('nama');
             $table->string('email');
             $table->string('username')->unique();

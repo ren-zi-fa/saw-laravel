@@ -7,7 +7,7 @@
 </div>
 
 @if(session('message'))
-    {!! session('message') !!}
+{!! session('message') !!}
 @endif
 
 <div class="card shadow mb-4">
@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
                     @php
-                        $no = 1;
+                    $no = 1;
                     @endphp
                     @foreach ($list as $data)
                     <tr align="center">
@@ -39,17 +39,24 @@
                         <td>{{ $data->nama }}</td>
                         <td>{{ $data->email }}</td>
                         <td>{{ $data->username }}</td>
-                        <td>{{ $data->user_level }}</td>
+                        <td>{{ $data->nama_level }}</td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a data-toggle="tooltip" data-placement="bottom" title="Detail Data" href="{{ url('User/detail', $data->id_user) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-                                <a data-toggle="tooltip" data-placement="bottom" title="Edit Data" href="{{ url('User/edit', $data->id_user) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                <a data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="{{ url('User/destroy', $data->id_user) }}" onclick="return confirm('Apakah anda yakin untuk menghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a data-toggle="tooltip" data-placement="bottom" title="Detail Data"
+                                    href="{{ url('User/detail', $data->id_user) }}" class="btn btn-primary btn-sm"><i
+                                        class="fa fa-eye"></i></a>
+                                <a data-toggle="tooltip" data-placement="bottom" title="Edit Data"
+                                    href="{{ url('User/edit', $data->id_user) }}" class="btn btn-warning btn-sm"><i
+                                        class="fa fa-edit"></i></a>
+                                <a data-toggle="tooltip" data-placement="bottom" title="Hapus Data"
+                                    href="{{ url('User/destroy', $data->id_user) }}"
+                                    onclick="return confirm('Apakah anda yakin untuk menghapus data ini')"
+                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </div>
                         </td>
                     </tr>
                     @php
-                        $no++;
+                    $no++;
                     @endphp
                     @endforeach
                 </tbody>
